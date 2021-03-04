@@ -9,22 +9,80 @@
 
 let numRows = 0;
 let numCols = 0;
-let colorSelected;
+let colorSelected = false;
 
-function addR() {
-    alert("Clicked Add Row")
+function addR() 
+{
+    //gets the grid in the DOM and appends a new row
+    let thisGrid = document.getElementById("grid")
+    let addRow = document.createElement("tr")
+
+    //for loop to create a cell for each row for as many columns that there are
+    for(let i = 0; i < numCols; i++) 
+    {
+        let rowCell = document.createElement("td");
+        
+        addRow.appendChild(rowCell);
+    }
+
+    //appends and increases the numrows
+    thisGrid.appendChild(addRow);
+    numRows++;
 }
 
-function addC() {
-    alert("Clicked Add COlumn")
+function addC() 
+{
+    //gets the new grid in the dom and appends new row
+    let thisGrid = document.getElementById("grid");
+    let allRows = document.querySelectorAll("tr");
+
+    //counter for # of rows
+    let countRows = 0;
+
+    //for the amt of rows create a cell in the column
+    for(let i = 0; i < numRows; i++) 
+    {
+        let columnCell = document.createElement("td");
+                
+        allRows[countRows].appendChild(columnCell);
+
+        countRows++;
+    }
+//increases the num of cols
+    numCols++;
 }
 
-function deleteR() {
-    alert("Clicked Delete Row")
+function deleteR() 
+{
+    //grabs the grid
+    let thisGrid = document.getElementById("grid");
+    
+    //deletes the last row
+    thisGrid.deleteRow(numRows-1);
+
+    //decreases num of rows by 1
+    numRows--;
 }
 
-function deleteC() {
-    alert("Clicked Delete Column")
+function deleteC() 
+{
+    //grabs the grid
+    let thisGrid = document.getElementById("grid");
+    
+    let allRows = document.querySelectorAll("tr");
+
+    let countRows = 0;
+
+    //for i < the number of rows, remove the last cell of the last column as we delete the last column
+    for(let i = 0; i < numRows; i++) 
+    {
+        allRows[countRows].removeChild(allRows[countRows].lastChild);
+
+        countRows++;
+    }
+
+    //decreases the num of columns by 1
+    numCols--;
 }
 
 function fillUC() {
