@@ -7,8 +7,8 @@
 // - `node.children`
 // - `node.lastElementChild`
 
-let numRows = 1;
-let numCols = 2;
+let numRows = 0;
+let numCols = 0;
 let colorSelected;
 
 function addR() 
@@ -51,7 +51,7 @@ function addC()
 //increases the num of cols
     numCols++;
 }
-
+ 
 function removeR() 
 {
     //grabs the grid
