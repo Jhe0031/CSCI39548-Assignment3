@@ -7,9 +7,9 @@
 // - `node.children`
 // - `node.lastElementChild`
 
-let numRows = 0;
-let numCols = 0;
-let colorSelected = false;
+let numRows = 1;
+let numCols = 2;
+let colorSelected;
 
 function addR() 
 {
@@ -52,7 +52,7 @@ function addC()
     numCols++;
 }
 
-function deleteR() 
+function removeR() 
 {
     //grabs the grid
     let thisGrid = document.getElementById("grid");
@@ -64,7 +64,7 @@ function deleteR()
     numRows--;
 }
 
-function deleteC() 
+function removeC() 
 {
     //grabs the grid
     let thisGrid = document.getElementById("grid");
