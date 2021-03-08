@@ -101,12 +101,15 @@ function fillUC() {
 }
 
 function fillAll() {
+    // stored selected color value
     let color = document.getElementById("colorPicker").value;
+    //select all grids, and change color to selected one
     let allgrids = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = color);
     console.log(allgrids);
 }
 
 function clearAll() {
+    //set all selected grids' color as empty
     let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = " ");
     console.log(clearcolor);
 }
