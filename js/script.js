@@ -85,6 +85,7 @@ function removeC()
     numCols--;
 }
 
+// this one still not work
 function fillUC() {
     let color =  document.getElementById("colorPicker").value;
     let thisGrid = document.getElementById("grid");
@@ -108,9 +109,10 @@ function fillAll() {
     console.log(allgrids);
 }
 
+//this one still not work
 function clearAll() {
     //set all selected grids' color as empty
-    let clearcolor = document.querySelectorAll("grid").forEach(td => td.style.backgroundColor = null);
+    let clearcolor = document.querySelectorAll("td").forEach(td => td.style.backgroundColor = " ");
     console.log(clearcolor);
 }
 
