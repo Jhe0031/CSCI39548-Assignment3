@@ -110,7 +110,7 @@ function fillAll() {
 
 function clearAll() {
     //set all selected grids' color as empty
-    let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = " ");
+    let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = 'transparent');
     console.log(clearcolor);
 }
 
