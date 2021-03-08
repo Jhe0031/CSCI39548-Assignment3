@@ -86,7 +86,18 @@ function removeC()
 }
 
 function fillUC() {
-    alert("Clicked Fill All Uncolored")
+    let color =  document.getElementById("colorPicker").value;
+    let thisGrid = document.getElementById("grid");
+    for(let i = 0; i < numRows; i++)
+    {
+        for (let j = 0; j < numCols; j++)
+        {
+            if(thisGrid.style.background = " ")
+            {
+                thisGrid.style.backgroundColor = color;
+            }
+        }
+    }
 }
 
 function fillAll() {
@@ -96,7 +107,8 @@ function fillAll() {
 }
 
 function clearAll() {
-    alert("Clicked Clear All")
+    let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = " ");
+    console.log(clearcolor);
 }
 
 function selected() {
