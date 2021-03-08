@@ -91,8 +91,8 @@ function fillUC() {
 
 function fillAll() {
     let color = document.getElementById("colorPicker").value;
-    pixelCanvas.querySelectorAll('td').forEach(td => 
-    td.style.backgroundColor = color);
+    let allgrids = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = color);
+    console.log(allgrids);
 }
 
 function clearAll() {
