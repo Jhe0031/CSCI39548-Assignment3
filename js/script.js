@@ -90,7 +90,9 @@ function fillUC() {
 }
 
 function fillAll() {
-    alert("Clicked FIll All")
+    let color = selected();
+    pixelCanvas.querySelectorAll('td').forEach(td => 
+    td.style.backgroundColor = color);
 }
 
 function clearAll() {
