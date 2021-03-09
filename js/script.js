@@ -111,9 +111,10 @@ function fillAll() {
 
 //this one still not work
 function clearAll() {
+    document.getElementsById("grid").style.backgroundColor = "initial";
     //set all selected grids' color as empty
-    let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = "initial");
-    console.log(clearcolor);
+    //let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = "initial");
+    //console.log(clearcolor);
 }
 
 function selected() {
