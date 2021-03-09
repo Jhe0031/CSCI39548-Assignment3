@@ -109,15 +109,10 @@ function fillAll() {
     console.log(allgrids);
 }
 
-//this one still not work
 function clearAll() {
-    let elements = document.getElementsId("grid"); // get all elements
-	for(let i = 0; i < elements.length; i++){
-		elements[i].style.backgroundColor = "teal";
-    }
-    //set all selected grids' color as empty
-    //let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = "initial");
-    //console.log(clearcolor);
+    //change all grids color into intial color = "teal"
+    let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = "teal");
+    console.log(clearcolor);
 }
 
 function selected() {
