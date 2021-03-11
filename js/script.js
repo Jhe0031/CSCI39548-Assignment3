@@ -113,7 +113,7 @@ function fillUC() {
         for (let j = 0, col; col = row.cells[j]; j++)
         {
             //change all grid's color to selected color if their color are still initial color
-            if(table.rows[i].cells[j].style.backgroundColor === "initial")
+            if(table.rows[i].cells[j].style.backgroundColor === "transparent")
             {
                 table.rows[i].cells[j].style.backgroundColor = color;
             }
