@@ -87,18 +87,21 @@ function removeC()
 
 // this one still not work
 function fillUC() {
-    let color =  document.getElementById("colorPicker").value;
-    let thisGrid = document.getElementById("grid");
-    for(let i = 0; i < numRows; i++)
+    let color = document.getElementById("colorPicker").value;
+    let table = document.getElementById("grid");
+    //iterate through rows
+    for (let i = 0, row; row = table.rows[i]; i++)
     {
-        for (let j = 0; j < numCols; j++)
+        //iterate through columns
+        for (let j = 0, col; col = row.cells[j]; j++)
         {
-            if(thisGrid.style.background = " ")
+            //change all grid's color to selected color if their color are still initial color
+            if(table.rows[i].cells[j].style.backgroundColor === "teal")
             {
-                thisGrid.style.backgroundColor = color;
+                table.rows[i].cells[j].style.backgroundColor = color;
             }
-        }
-    }
+        }  
+    }   
 }
 
 function fillAll() {
