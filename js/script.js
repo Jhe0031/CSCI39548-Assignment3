@@ -7,16 +7,66 @@
 // - `node.children`
 // - `node.lastElementChild`
 
-let numRows = 0;
-let numCols = 0;
+let numRows = 1;
+let numCols = 1;
 let colorSelected;
 
-function addR() {
-    alert("Clicked Add Row")
+function selected() {
+    colorSelected = document.getElementById("colorPicker").value;
+    document.getElementById("initial-box").style.backgroundColor = colorSelected;
 }
 
-function addC() {
-    alert("Clicked Add COlumn")
+function addR() 
+{
+    //gets the grid in the DOM and appends a new row
+    let thisGrid = document.getElementById("grid")
+    let addRow = document.createElement("tr")
+
+    if (numCols == 0) { //for loop to create 1 box if there are no columns
+        var box = document.createElement("td");
+        box.onclick = function() {
+            this.style.backgroundColor = document.getElementById("colorPicker").value;
+        };
+        addRow.appendChild(box);
+        numCols++;
+    } else { //for loop to create a cell for each row for as many columns that there are
+        for(let i = 0; i < numCols; i++) {
+            var box = document.createElement("td");
+            box.onclick = function() {
+                this.style.backgroundColor = document.getElementById("colorPicker").value;
+            };
+            addRow.appendChild(box);
+        }
+    }
+
+    //appends and increases the numrows
+    thisGrid.appendChild(addRow);
+    numRows++;
+}
+
+function addC() 
+{
+    //gets the new grid in the dom and appends new row
+    let thisGrid = document.getElementById("grid");
+    let allRows = document.querySelectorAll("tr");
+
+    //counter for # of rows
+    let countRows = 0;
+
+    //for the amt of rows create a cell in the column
+    for(let i = 0; i < numRows; i++) 
+    {
+        // let columnCell = document.createElement("td");
+        var box = document.createElement("td");
+        box.onclick = function() {
+            this.style.backgroundColor = document.getElementById("colorPicker").value;
+        };
+        allRows[countRows].appendChild(box);
+
+        countRows++;
+    }
+    //increases the num of cols
+    numCols++;
 }
 
 function deleteR() {
@@ -36,10 +86,6 @@ function fillAll() {
 }
 
 function clearAll() {
-    alert("Clicked Clear All")
-}
-
-function selected() {
-    colorSelected = document.getElementById("colorPicker").value;
-    console.log(colorSelected);
+    //change all grids color into intial color = "teal"
+    let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = "white");
 }
