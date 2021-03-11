@@ -103,11 +103,11 @@ function removeC()
 }
 
 function fillUC() {
-    colorSelected = document.getElementById("colorPicker").value;
-    let table = document.querySelectorAll('td').forEach(td => { 
-        if(td.style.backgroundColor === "white")
+    let color = document.getElementById("colorPicker").value;
+    let table = document.querySelectorAll('td').forEach(td => {
+        if(td.style.backgroundColor == "" || td.style.backgroundColor == "white")
         {
-            td.style.backgroundColor = colorSelected;
+            td.style.backgroundColor = color;
         }
     });
 }
@@ -117,7 +117,6 @@ function fillAll() {
     let color = document.getElementById("colorPicker").value;
     //select all grids, and change color to selected one
     let allgrids = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = color);
-    console.log(allgrids);
 }
 
 function clearAll() {
