@@ -105,20 +105,12 @@ function removeC()
 // this one still not work
 function fillUC() {
     let color = document.getElementById("colorPicker").value;
-    let table = document.getElementById("grid");
-    //iterate through rows
-    for (let i = 0, row; row = table.rows[i]; i++)
-    {
-        //iterate through columns
-        for (let j = 0, col; col = row.cells[j]; j++)
+    let table = document.querySelectorAll('td').forEach(td => {
+        if(td.style.backgroundColor == "" || td.style.backgroundColor == "white")
         {
-            //change all grid's color to selected color if their color are still initial color
-            if(table.rows[i].cells[j].style.backgroundColor === "teal")
-            {
-                table.rows[i].cells[j].style.backgroundColor = color;
-            }
-        }  
-    }   
+            td.style.backgroundColor = color;
+        }
+    });
 }
 
 function fillAll() {
@@ -126,7 +118,6 @@ function fillAll() {
     let color = document.getElementById("colorPicker").value;
     //select all grids, and change color to selected one
     let allgrids = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = color);
-    console.log(allgrids);
 }
 
 function clearAll() {
