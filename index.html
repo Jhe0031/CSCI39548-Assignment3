@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Title</title>
+    <title>Grid</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,9 +16,9 @@
     <button onclick="removeR()">Remove Row</button>
     <button onclick="removeC()">Remove Column</button>
     <button onclick="fillUC()">Fill All Uncolored</button>
-    <button onclick="fillAll()">Fll All</button>
+    <button onclick="fillAll()">Fill All</button>
     <button onclick="clearAll()">Clear</button>
-    <select onchange="selected()" name="Color" id="colorPicker">
+    <select name="Color" id="colorPicker">
         <optgroup label="Normal">
             <option value="red">Red</option>
             <option value="orange">Orange</option>
@@ -38,10 +38,9 @@
     </select>
 
     <!-- initialize the table --> 
-    <table id="grid"></table>
+    <table id="grid">
         <tr>
-            <td></td>
-            <td></td>
+            <td onclick="selected()" id="initial-box"></td>
         </tr>
     </table>
     <script src="./js/script.js"></script>
