@@ -102,7 +102,6 @@ function removeC()
     numCols--;
 }
 
-// this one still not work
 function fillUC() {
     let color = document.getElementById("colorPicker").value;
     let table = document.querySelectorAll('td').forEach(td => {
