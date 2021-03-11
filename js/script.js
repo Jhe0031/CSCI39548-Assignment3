@@ -68,24 +68,68 @@ function addC()
     //increases the num of cols
     numCols++;
 }
+ 
+function removeR() 
+{
+    //grabs the grid
+    let thisGrid = document.getElementById("grid");
+    
+    //deletes the last row
+    thisGrid.deleteRow(numRows-1);
 
-function deleteR() {
-    alert("Clicked Delete Row")
+    //decreases num of rows by 1
+    numRows--;
 }
 
-function deleteC() {
-    alert("Clicked Delete Column")
+function removeC() 
+{
+    //grabs the grid
+    let thisGrid = document.getElementById("grid");
+    
+    let allRows = document.querySelectorAll("tr");
+
+    let countRows = 0;
+
+    //for i < the number of rows, remove the last cell of the last column as we delete the last column
+    for(let i = 0; i < numRows; i++) 
+    {
+        allRows[countRows].removeChild(allRows[countRows].lastChild);
+
+        countRows++;
+    }
+
+    //decreases the num of columns by 1
+    numCols--;
 }
 
+// this one still not work
 function fillUC() {
-    alert("Clicked Fill All Uncolored")
+    let color = document.getElementById("colorPicker").value;
+    let table = document.getElementById("grid");
+    //iterate through rows
+    for (let i = 0, row; row = table.rows[i]; i++)
+    {
+        //iterate through columns
+        for (let j = 0, col; col = row.cells[j]; j++)
+        {
+            //change all grid's color to selected color if their color are still initial color
+            if(table.rows[i].cells[j].style.backgroundColor === "teal")
+            {
+                table.rows[i].cells[j].style.backgroundColor = color;
+            }
+        }  
+    }   
 }
 
 function fillAll() {
-    alert("Clicked FIll All")
+    // stored selected color value
+    let color = document.getElementById("colorPicker").value;
+    //select all grids, and change color to selected one
+    let allgrids = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = color);
+    console.log(allgrids);
 }
 
 function clearAll() {
-    //change all grids color into intial color = "teal"
+    //change all grids color into intial color = "white"
     let clearcolor = document.querySelectorAll('td').forEach(td => td.style.backgroundColor = "white");
 }
